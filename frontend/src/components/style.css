@@ -6,3 +6,7 @@ div#root{
     width: 50%;
     margin: 0 auto;
 }
+.sidebar {
+    transition: all 0.3s ease;
+  }
+  

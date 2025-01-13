@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 // import { Link } from "react-router-dom";
 import { Link, useNavigate } from "react-router-dom";
 import { GlobalContext } from "../context/GlobalContext";
+import Cookies from "js-cookie";
 
 const login = () => {
   const [email, setEmail] = useState("");
@@ -29,6 +30,7 @@ const login = () => {
         alert("Login successful!");
         // Handle login success (e.g., redirect to dashboard)
         setUserData(data?.user);
+        Cookies.set("UserAuth", data?.token);
         navigate("/dashboard");
       } else {
         alert(data.error || "Login failed!");
